@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مساعد تحفيظ</string>
+
+    <string name="txt_memoFriend">مساعد تحفيظ</string>
+    <string name="btn_wordSentenceAdd">أضف جملة جملة</string>
+    <string name="btn_listentoAdded">استمع إلى الإضافات</string>
+    <string name="btn_startMemo">ابدأ في الحفظ</string>
+
+    <string name="txt_memoNotebook">كتاب الحفظ</string>
+    <string name="txt_addWord">أدخل كلمة جملة…</string>
+    <string name="btn_save">يحفظ</string>
+    <string name="btn_clearList">لائحة خالية</string>
+
+    <string name="txt_letsgo">لنبدأ!</string>
+    <string name="txt_memoWordC">عدد الكلمات / الجمل التي يجب حفظها:</string>
+    <string name="txt_remainWordC">العدد المتبقي من الكلمات / الجمل:</string>
+
+    <string name="btn_delete">حذف</string>
+    <string name="txt_correct">صحيح!</string>
+    <string name="txt_veryWell">ثابر على العمل الجيد</string>
+    <string name="btn_stop">قف</string>
+    <string name="btn_continue">يكمل</string>
+    <string name="txt_wrong">خاطئ!</string>
+    <string name="txt_tryAgain">فكر بجدية وحاول مرة أخرى :)</string>
+
+    <string name="btn_listen">محطة الاستماع</string>
+    <string name="btn_listentoWord">استمع إلى جمل الكلمات</string>
+    <string name="btn_stopListen">توقف عن الاستماع</string>
+
+
+    <string name="alrt_warn">تحذير!</string>
+    <string name="alrt_sureDeleteOne">هل أنت متأكد أنك تريد حذف هذا الخط?</string>
+    <string name="alrt_yes">نعم</string>
+    <string name="alrt_no">رقم</string>
+    <string name="alrt_sureDeleteAll">هل أنت متأكد أنك تريد حذف كل الكلمات؟</string>
+
+    <string name="tst_plsAddWord">الرجاء كتابة الكلمات للحفظ!</string>
+    <string name="tst_saveFailed">فشل عملية الحفظ!</string>
+    <string name="tst_plsRestart">يجب إعادة تشغيل التطبيق حتى يسري التغيير!</string>
+    <string name="tst_stillListn">أصغى بالفعل!</string>
+    <string name="tst_emptytoRead">لا شيء للقراءة!</string>
+    <string name="tst_readFailed">آسف! فشل في القراءة…</string>
+    <string name="tst_thereIsNoMemoWord">تهانينا! لم يتبق شيء لحفظه :)</string>
+    <string name="alrt_repeatSure">هل أنت متأكد أنك تريد البدء من جديد?</string>
+    <string name="alrt_checkedAs">…فحص باسم</string>
+    <string name="tst_firstAdd">يجب عليك إضافة كلمة أو جملة أولا!</string>
+    <string name="tst_notsupp">جهازك لا يدعم الكلام</string>
+
+    <string name="promt_Add">الآن يمكنك أن تقول جملة الكلمة التي تريد حفظها</string>
+    <string name="promt_Memo">بداية! انا استمع اليك</string>
+
+    <string name="tst_notRepeat">لا حاجة لإعادة ضبط العداد</string>
+    <string name="tst_connct">الرجاء التحقق من اتصال الانترنت الخاص بك! يتم إغلاق التطبيق.</string>
+    <string name="alrt_ok">أفهم</string>
+    <string name="alrt_checklisten">إذا كان زر الاستماع لا يعمل. تأكد من تحديد خدمات الكلام من Google في إعدادات هاتفك -> اللغة والإدخال -> إخراج تحويل النص إلى كلام. إذا لم تتمكن من رؤية خدمة الكلام من Google ، فيجب عليك البحث عن \"خدمات الكلام من Google\" من متجر Google Play وتثبيتها.</string>
+    <string name="txt_memolang">لغة الحفظ</string>
+</resources>

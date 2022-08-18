@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Asistente de Memorización</string>
+
+    <string name="txt_memoFriend">Asistente de Memorización</string>
+    <string name="btn_wordSentenceAdd">Agregar Palabra-Oración</string>
+    <string name="btn_listentoAdded">Escuchar Adiciones</string>
+    <string name="btn_startMemo">Empezar a Memorizar</string>
+
+    <string name="txt_memoNotebook">Libro de Memorización</string>
+    <string name="txt_addWord">Ingresar Palabra-Oración…</string>
+    <string name="btn_save">Ahorrar</string>
+    <string name="btn_clearList">Limpiar Lista</string>
+
+    <string name="txt_letsgo">Empecemos!</string>
+    <string name="txt_memoWordC">Conteo de palabras-frases para memorizar:</string>
+    <string name="txt_remainWordC">Número restante de palabras-oraciones:</string>
+
+    <string name="btn_delete">Borrar</string>
+    <string name="txt_correct">Correcto!</string>
+    <string name="txt_veryWell">Sigan con el buen trabajo</string>
+    <string name="btn_stop">Deténgase</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="txt_wrong">Equivocado!</string>
+    <string name="txt_tryAgain">Piénsalo bien e inténtalo de nuevo :)</string>
+
+    <string name="btn_listen">Estación de Escucha</string>
+    <string name="btn_listentoWord">Escucha las Palabras-Oraciones</string>
+    <string name="btn_stopListen">Deja de Escuchar</string>
+
+
+    <string name="alrt_warn">Advertencia!</string>
+    <string name="alrt_sureDeleteOne">Estás seguro de que quieres eliminar esta línea?</string>
+    <string name="alrt_yes">Sí</string>
+    <string name="alrt_no">No</string>
+    <string name="alrt_sureDeleteAll">Estás seguro de que quieres eliminar todas las palabras?</string>
+
+    <string name="tst_plsAddWord">Por favor escribe las palabras para guardar!</string>
+    <string name="tst_saveFailed">Guardar fallido!</string>
+    <string name="tst_plsRestart">Debes reiniciar la aplicación para que el cambio surta efecto!</string>
+    <string name="tst_stillListn">Ya escuchando!</string>
+    <string name="tst_emptytoRead">Nada que leer!</string>
+    <string name="tst_readFailed">Lo siento! Lectura fallida…</string>
+    <string name="tst_thereIsNoMemoWord">Felicidades! No queda nada que memorizar :)</string>
+    <string name="alrt_repeatSure">Estás seguro de que quieres empezar de nuevo??</string>
+    <string name="alrt_checkedAs">…Marcado como</string>
+    <string name="tst_firstAdd">Primero debe agregar una palabra u oración!</string>
+    <string name="tst_notsupp">Su dispositivo no admite voz</string>
+
+    <string name="promt_Add">Ahora puedes decir la palabra-frase que quieras memorizar!</string>
+    <string name="promt_Memo">Comienzo! te estoy escuchando</string>
+
+    <string name="tst_notRepeat">No es necesario reiniciar el contador</string>
+    <string name="tst_connct">Por favor revise su conexion a internet! La aplicación se cerrará.</string>
+    <string name="alrt_ok">Entiendo</string>
+    <string name="alrt_checklisten">Si el botón de escuchar no funciona. Asegúrese de que los servicios de voz de Google estén seleccionados en la Configuración de su teléfono -> Idioma y entradas -> Salida de texto a voz. Si no puede ver el servicio de voz de Google, debe buscar \"Speech Services by Google\" en Google Play Store e instalarlo.</string>
+    <string name="txt_memolang">Lenguaje de Memorización:</string>
+</resources>

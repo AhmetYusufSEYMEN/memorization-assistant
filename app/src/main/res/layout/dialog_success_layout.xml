@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/video_loading"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:lottie_rawRes="@raw/success"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
+
+    <TextView
+        android:id="@+id/txt_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_correct"
+        android:fontFamily="@font/exo_medium"
+        android:layout_margin="10dp"
+        android:textColor="@color/primary"
+        android:textSize="26sp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_veryWell"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/exo_medium"
+        android:textSize="22sp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btnDialogArtıDur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_background_style"
+        android:text="@string/btn_stop"
+        android:layout_weight="1"
+        android:textAllCaps="false"
+        android:fontFamily="@font/exo_medium"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        />
+    <Button
+        android:id="@+id/btnDialogArtıDevam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_background_style"
+        android:layout_weight="1"
+        android:text="@string/btn_continue"
+        android:textAllCaps="false"
+        android:fontFamily="@font/exo_medium"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        />
+</LinearLayout>
+
+</LinearLayout>

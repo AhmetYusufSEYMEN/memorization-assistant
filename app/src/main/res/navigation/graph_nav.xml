@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_nav"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.seymen.ezberarkadasim.view.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_ekleKaydetFragment"
+            app:destination="@id/ekleKaydetFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_menuFragment_to_okutEzberleFragment"
+            app:destination="@id/okutEzberleFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/ekleKaydetFragment"
+        android:name="com.seymen.ezberarkadasim.view.AddSaveFragment"
+        android:label="fragment_ekle_kaydet"
+        tools:layout="@layout/fragment_add_save" >
+        <action
+            android:id="@+id/action_ekleKaydetFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/okutEzberleFragment"
+        android:name="com.seymen.ezberarkadasim.view.MemoFragment"
+        android:label="OkutEzberleFragment" >
+        <action
+            android:id="@+id/action_okutEzberleFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".view.MenuFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCardView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/accent"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:id="@+id/geriBtnEzberle"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/leftarrow">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/txt_letsgo"
+            android:textColor="@color/primary"
+            android:textSize="26sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ezbBaslaMCardView"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_height="130dp"
+        android:elevation="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/mCardView"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/primary"
+        app:cardCornerRadius="20dp"
+        app:strokeColor="@color/light_gray"
+
+        app:strokeWidth="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+            android:id="@+id/ezbereBaslaButton"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="fitCenter"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:background="@color/primary"
+            android:src="@drawable/ezberebasla"
+             />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_startMemo"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/light_gray"
+                android:fontFamily="@font/exo_medium"
+                />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/textViewToplamKelimeBaslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ezbBaslaMCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/exo_medium"
+        android:text="@string/txt_memoWordC"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textViewToplamKelime"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/light_gray"
+        android:fontFamily="@font/exo_medium"
+        android:layout_below="@id/textViewToplamKelimeBaslik"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/textViewSayacBaslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewToplamKelime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/exo_medium"
+        android:text="@string/txt_remainWordC"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp"
+
+        />
+    <TextView
+        android:id="@+id/textViewSayac"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/light_gray"
+        android:fontFamily="@font/exo_medium"
+        android:layout_below="@id/textViewSayacBaslik"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageButton
+        android:id="@+id/btnTekrarla"
+        android:layout_width="85dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/textViewSayac"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="@color/primary"
+        android:scaleType="fitCenter"
+        android:src="@drawable/repeat" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-5522977588824109/7348213574" />
+
+
+</RelativeLayout>

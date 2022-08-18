@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memorization Assistant</string>
+
+    <string name="txt_memoFriend">Memorization Assistant</string>
+    <string name="btn_wordSentenceAdd">Add Word-Sentence</string>
+    <string name="btn_listentoAdded">Listen to Additions</string>
+    <string name="btn_startMemo">Start Memorizing</string>
+
+    <string name="txt_memoNotebook">Memorization Book</string>
+    <string name="txt_addWord">Enter Word-Sentence…</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_clearList">Clear List</string>
+
+    <string name="txt_letsgo">Let\'s Start!</string>
+    <string name="txt_memoWordC">Count of Words/Sentences to Memorize:</string>
+    <string name="txt_remainWordC">Remaining Number of Words/Sentences:</string>
+
+    <string name="btn_delete">Delete</string>
+    <string name="txt_correct">Correct!</string>
+    <string name="txt_veryWell">Keep up the good work</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_continue">Continue</string>
+    <string name="txt_wrong">Wrong!</string>
+    <string name="txt_tryAgain">Think hard and try again :)</string>
+
+    <string name="btn_listen">Listening Station</string>
+    <string name="btn_listentoWord">Listen to the Words-Sentences</string>
+    <string name="btn_stopListen">Stop Listening</string>
+
+
+    <string name="alrt_warn">Warning!</string>
+    <string name="alrt_sureDeleteOne">Are you sure you want to delete this line?</string>
+    <string name="alrt_yes">Yes</string>
+    <string name="alrt_no">No</string>
+    <string name="alrt_sureDeleteAll">Are you sure you want to delete all the words?</string>
+
+    <string name="tst_plsAddWord">Please write the words to save!</string>
+    <string name="tst_saveFailed">Save Failed!</string>
+    <string name="tst_plsRestart">You must restart the application for the change to take effect!</string>
+    <string name="tst_stillListn">Already Listening!</string>
+    <string name="tst_emptytoRead">Nothing to read!</string>
+    <string name="tst_readFailed">Sorry! Read failed…</string>
+    <string name="tst_thereIsNoMemoWord">Congratulations! There is nothing left to memorize :)</string>
+    <string name="alrt_repeatSure">Are you sure you want to start over?</string>
+    <string name="alrt_checkedAs">…Checked As</string>
+    <string name="tst_firstAdd">You must add a word or sentence first!</string>
+    <string name="tst_notsupp">Your device does not support speech</string>
+
+    <string name="promt_Add">Now you can say the word-sentence you want to memorize!</string>
+    <string name="promt_Memo">Start! I am listening to you</string>
+
+    <string name="tst_notRepeat">No need to reset the counter</string>
+    <string name="tst_connct">Please check your internet connection! The application is closing.</string>
+    <string name="alrt_ok">I understand</string>
+    <string name="alrt_checklisten">If the listen button is not working. Make sure the speech services by Google is selected in your phone\'s Settings -> Language and Input -> Text-to-speech output. If you cannot see the Google speech service, you must search for \"Speech Services by Google\" from the Google Play Store and install it.</string>
+    <string name="txt_memolang">Memorization Language:</string>
+</resources>

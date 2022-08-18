@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Ezber Arkadaşım</string>
+
+    <string name="txt_memoFriend">EZBER ARKADAŞIM</string>
+    <string name="btn_wordSentenceAdd">Kelime-Cümle Ekle</string>
+    <string name="btn_listentoAdded">Eklediklerini Dinle</string>
+    <string name="btn_startMemo">Ezberlemeye Başla</string>
+
+    <string name="txt_memoNotebook">Ezber Defterim</string>
+    <string name="txt_addWord">Kelime-Cümle Girin…</string>
+    <string name="btn_save">Kaydet</string>
+    <string name="btn_clearList">Listeyi Temizle</string>
+
+    <string name="txt_letsgo">Hadi Başlayalım!</string>
+    <string name="txt_memoWordC">Ezberlenecek Kelime-Cümle sayısı:</string>
+    <string name="txt_remainWordC">Kalan Kelime-Cümle sayısı:</string>
+    <string name="btn_delete">Sil</string>
+
+    <string name="txt_correct">Doğru!</string>
+    <string name="txt_veryWell">Çok iyi gidiyorsun</string>
+    <string name="btn_stop">Durdur</string>
+    <string name="btn_continue">Devam Et</string>
+    <string name="txt_wrong">Yanlış!</string>
+    <string name="txt_tryAgain">İyi düşün ve tekrar dene :)</string>
+
+    <string name="btn_listen">Dinleme İstasyonu</string>
+    <string name="btn_listentoWord">Kelime-Cümleleri Dinle</string>
+    <string name="btn_stopListen">Dinlemeyi Durdur</string>
+
+    <string name="alrt_warn">Uyarı !</string>
+    <string name="alrt_sureDeleteOne">Bu satırı silmek istediğine emin misin?</string>
+    <string name="alrt_yes">Evet</string>
+    <string name="alrt_no">Hayır</string>
+    <string name="alrt_sureDeleteAll">Tüm listeyi silmek istediğine emin misin?</string>
+
+    <string name="tst_plsAddWord">Lütfen kaydedilecek kelimeleri yaz!</string>
+    <string name="tst_saveFailed">Kayıt Başarısız!</string>
+    <string name="tst_plsRestart">Değişikliğin geçerli olabilmesi için uygulamayı yeniden başlatmalısın!</string>
+    <string name="tst_stillListn">Zaten Dinliyorsunuz!</string>
+    <string name="tst_emptytoRead">Okunacak bir şey yok!</string>
+    <string name="tst_readFailed">Üzgünüm! Okuma başarısız oldu…</string>
+    <string name="tst_thereIsNoMemoWord">Tebrikler! Ezberlenecek bir şey kalmadı :)</string>
+    <string name="alrt_repeatSure">Baştan başlamak istediğine emin misin?</string>
+    <string name="alrt_checkedAs">Olarak Kontrol Edildi…</string>
+    <string name="tst_firstAdd">Önce kelime-cümle eklemelisin!</string>
+    <string name="tst_notsupp">Cihazınız konuşma özelliğini desteklemiyor</string>
+
+    <string name="promt_Add">Şimdi ezberlemek istediğin kelime-cümleyi söyleyebilirsin!</string>
+    <string name="promt_Memo">Başla! Seni dinliyorum</string>
+
+    <string name="tst_notRepeat">Sayacı sıfırlamaya gerek yok</string>
+    <string name="tst_connct">Lütfen internet bağlantınızı kontrol ediniz! Uygulama kapatılıyor.</string>
+    <string name="alrt_ok">Anladım</string>
+    <string name="alrt_checklisten">Eğer dinleme butonu çalışmıyorsa. Telefonunuzun Ayarlar -> Dil ve Giriş -> Metin-konuşma çıktısı kısmından Google konuşma servisinin seçili oluğundan emin olun. Eğer Google konuşma servisini göremiyorsanız Google Play Store\'dan \"Speech Services by Google\" şeklinde aratarak yüklemelisiniz.</string>
+    <string name="txt_memolang">Ezber Dili:</string>
+
+</resources>
