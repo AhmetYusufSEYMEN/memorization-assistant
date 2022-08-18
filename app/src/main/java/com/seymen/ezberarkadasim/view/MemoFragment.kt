@@ -43,6 +43,8 @@ class MemoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         apply {
+            //Github TEST
+            //Github TEST222
             whchLang = arguments?.getInt("LANGKEY")
         }
         binding = FragmentMemoBinding.inflate(inflater)
