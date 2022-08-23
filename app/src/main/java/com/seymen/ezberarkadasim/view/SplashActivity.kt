@@ -7,7 +7,9 @@ import com.seymen.ezberarkadasim.R
 import com.seymen.ezberarkadasim.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySplashBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

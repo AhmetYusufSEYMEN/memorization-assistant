@@ -31,7 +31,8 @@ import com.seymen.ezberarkadasim.databinding.FragmentMemoBinding
 import com.seymen.ezberarkadasim.viewmodel.MemoViewModel
 
 class MemoFragment : Fragment() {
-    private lateinit var okumaList : ArrayList<String>
+    //Variables defined
+    private lateinit var readList : ArrayList<String>
     private lateinit var sqliteHelper : SQLiteHelper
     private lateinit var control : String
     private var whchLang : Int? = null
@@ -47,17 +48,20 @@ class MemoFragment : Fragment() {
         }
         binding = FragmentMemoBinding.inflate(inflater)
         return binding.root
-        //Github TEST
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //Defined variables are initialized
         viewModel = ViewModelProvider(this)[MemoViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
+
         sqliteHelper = SQLiteHelper(requireContext())
-        okumaList = sqliteHelper.getOnlyWord()
-        binding.textViewToplamKelime.text= okumaList.size.toString()
-        binding.textViewSayac.text= okumaList.size.toString()
+
+        readList = sqliteHelper.getOnlyWord()
+        binding.textViewToplamKelime.text= readList.size.toString()
+        binding.textViewSayac.text= readList.size.toString()
 
         MobileAds.initialize(requireContext())
         mAdView = binding.adView
@@ -66,7 +70,7 @@ class MemoFragment : Fragment() {
 
         addInterstitialAd()
         binding.ezbBaslaMCardView.setOnClickListener {
-
+            //check permission and action
             if(ContextCompat.checkSelfPermission (requireContext(), Manifest.permission. RECORD_AUDIO ) != PackageManager. PERMISSION_GRANTED ){
                 checkPermission()
             } else {
@@ -81,7 +85,8 @@ class MemoFragment : Fragment() {
         binding.geriBtnEzberle.setOnClickListener {
             activity?.onBackPressed()
         }
-        binding.btnTekrarla.setOnClickListener {
+        //Actions to be taken when clicking the reset button
+        binding.btnRepeat.setOnClickListener {
             if(binding.textViewToplamKelime.text.toString().toInt() != binding.textViewSayac.text.toString().toInt()){
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(R.string.alrt_repeatSure)
@@ -89,7 +94,7 @@ class MemoFragment : Fragment() {
                 builder.setTitle(R.string.alrt_warn)
                 builder.setIcon(R.drawable.warning)
                 builder.setPositiveButton(R.string.alrt_yes){ dialog, _->
-                    binding.textViewSayac.text = okumaList.size.toString()
+                    binding.textViewSayac.text = readList.size.toString()
                     dialog.dismiss()
                     if (mInterstitialAd != null) {
                         mInterstitialAd?.show(requireActivity())
@@ -106,6 +111,7 @@ class MemoFragment : Fragment() {
             }
         }
     }
+    //add advertisement method
     private fun addInterstitialAd(){
         val adRequest2 = AdRequest.Builder().build()
         InterstitialAd.load(requireContext(),"ca-app-pub-5522977588824109/4905883063", adRequest2, object : InterstitialAdLoadCallback() {
@@ -118,38 +124,42 @@ class MemoFragment : Fragment() {
             }
         })
     }
+    //check permission method
     private fun checkPermission() {
         if (ContextCompat.checkSelfPermission(requireContext(),Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             val permissions = arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.INTERNET)
             ActivityCompat.requestPermissions(requireActivity(), permissions,0)
         }
     }
-
+    //method of listening and validating the user
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         sqliteHelper = SQLiteHelper(requireContext())
-        okumaList = sqliteHelper.getOnlyWord()
-        if (okumaList.isNotEmpty()){
+        readList = sqliteHelper.getOnlyWord()
+        //check list
+        if (readList.isNotEmpty()){
             when (requestCode) {
                 20 -> if (resultCode == Activity.RESULT_OK && resultCode == Activity.RESULT_OK)
                 {
                     val result =data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                    //format data
                     control = result!![0].lowercase().trim().replace("\\s+".toRegex(), " ")
                     val re = Regex("[^a-zA-Z0-9ığüşöçİĞÜŞÖÇ \\p{InArabic}]")
                     control = re.replace(control, "")
 
-                    if(okumaList.contains(control)){
+                    if(readList.contains(control)){
                         val dialogBuilder = AlertDialog.Builder(requireContext())
                         val layoutView = layoutInflater.inflate(R.layout.dialog_success_layout, null)
-                        val dialogButtonDevam = layoutView.findViewById(R.id.btnDialogArtıDevam) as Button // ikincisi oluşturuldu...
-                        val dialogButtonDur = layoutView.findViewById(R.id.btnDialogArtıDur) as Button
+                        val dialogButtonContinue = layoutView.findViewById(R.id.btnDialogArtıDevam) as Button // ikincisi oluşturuldu...
+                        val dialogButtonStop = layoutView.findViewById(R.id.btnDialogArtıDur) as Button
                         dialogBuilder.setView(layoutView)
                         val alertDialog = dialogBuilder.create()
                         alertDialog.setCanceledOnTouchOutside(false)
                         alertDialog.show()
                         var sayac = binding.textViewSayac.text.toString().toInt()
 
-                        dialogButtonDevam.setOnClickListener {
+                        dialogButtonContinue.setOnClickListener {
                             var sayac2 = binding.textViewSayac.text.toString().toInt()
                             if (sayac2 > 1){
                                 sayac2 -= 1
@@ -161,7 +171,7 @@ class MemoFragment : Fragment() {
                             }
                             alertDialog.dismiss()
                         }
-                        dialogButtonDur.setOnClickListener {
+                        dialogButtonStop.setOnClickListener {
                                 sayac -= 1
                             binding.textViewSayac.text = sayac.toString()
                             alertDialog.dismiss()
@@ -189,6 +199,7 @@ class MemoFragment : Fragment() {
             Toast.makeText(requireContext(),R.string.tst_firstAdd,Toast.LENGTH_LONG).show()
         }
     }
+    //set speech language
     private fun getSpeechInput() {
         if(!SpeechRecognizer.isRecognitionAvailable(requireContext())){
              Toast.makeText(requireContext(), R.string.tst_notsupp,Toast.LENGTH_SHORT).show()}

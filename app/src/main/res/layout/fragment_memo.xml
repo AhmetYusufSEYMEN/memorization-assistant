@@ -134,7 +134,7 @@
         />
 
     <ImageButton
-        android:id="@+id/btnTekrarla"
+        android:id="@+id/btn_repeat"
         android:layout_width="85dp"
         android:layout_height="100dp"
         android:layout_below="@id/textViewSayac"

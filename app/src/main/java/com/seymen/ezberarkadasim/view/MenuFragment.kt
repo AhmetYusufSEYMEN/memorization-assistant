@@ -32,6 +32,7 @@ import kotlinx.android.synthetic.main.bottom_sheet_dialog.view.*
 import java.util.*
 
 class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
+    //Variables defined
     private lateinit var binding : FragmentMenuBinding
     private val arrayLang = arrayOf("  Türkçe  ","  English  ", "  Deutsch  ", " Français ", " Italiano ", " Español ", " Arabian ")
     private var whichLang : Int? = null
@@ -50,20 +51,29 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
     @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //Defined variables are initialized
         viewModel = ViewModelProvider(this)[MenuViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
+
         tts = TextToSpeech(requireContext(), this)
+
         sqliteHelper = SQLiteHelper(requireContext())
+
         sharedPreferences = requireContext().getSharedPreferences("com.seymen.ezberarkadasim", Context.MODE_PRIVATE)
+
         mAdView = binding.adView
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
+        //set last clicked spinner row
         val arrayAdapter = ArrayAdapter(requireContext(),R.layout.spinner_list_design,arrayLang)
         binding.spinnerLang.adapter = arrayAdapter
         val spinrow = sharedPreferences.getInt("spinnerrow",0)
         binding.spinnerLang.setSelection(spinrow)
         binding.spinnerLang.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
 
+            //if spinner item is changed
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 whichLang = position
                 bundle.putInt("LANGKEY" , whichLang!!)
@@ -90,6 +100,7 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
         }
 
     }
+    //method of show bottom sheet dialog
     private fun showdialog() {
         val dialog = Dialog(requireContext())
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -126,7 +137,7 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
             tts.stop()
         }
     }
-
+    //method of listening to words
     private fun speakOut() {
         val okumaList : ArrayList<String> = sqliteHelper.getOnlyWord()
         if (tts.isSpeaking){
@@ -143,6 +154,7 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
             }
         }
     }
+    //selection of listening language with data from spinner
     override fun onInit(status: Int) {
          if (status == TextToSpeech.SUCCESS) {
            when (whichLang) {

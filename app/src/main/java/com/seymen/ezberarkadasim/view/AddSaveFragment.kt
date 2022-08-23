@@ -29,12 +29,12 @@ import com.seymen.ezberarkadasim.model.WordsModel
 import com.seymen.ezberarkadasim.viewmodel.AddSaveViewModel
 import kotlinx.android.synthetic.main.fragment_add_save.*
 import java.util.*
-import java.util.Collections.replaceAll
 
 class AddSaveFragment : Fragment(){
+    //Variables defined
     private lateinit var sqliteHelper : SQLiteHelper
     private var adapter : RecyclerViewAdapter? = null
-    private lateinit var idler : ArrayList<Int>
+    private lateinit var id : ArrayList<Int>
     private lateinit var sharedPreferencesID : SharedPreferences
     private lateinit var viewModel: AddSaveViewModel
     private lateinit var binding : FragmentAddSaveBinding
@@ -59,14 +59,19 @@ class AddSaveFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Defined variables are initialized
         viewModel = ViewModelProvider(this)[AddSaveViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
+
         sqliteHelper = SQLiteHelper(requireContext())
+
         sharedPreferencesID = requireContext().getSharedPreferences("com.seymen.ezberarkadasim",MODE_PRIVATE)
+
         mAdView = binding.adView
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
-        idler = sqliteHelper.getOnlyID()
+
+        id = sqliteHelper.getOnlyID()
 
         btnSave.setOnClickListener {
             addWord()
@@ -81,6 +86,7 @@ class AddSaveFragment : Fragment(){
         }
 
         btnWriteWSpeech.setOnClickListener {
+            //check permission
             if(ContextCompat. checkSelfPermission (requireContext(), Manifest.permission. RECORD_AUDIO ) != PackageManager. PERMISSION_GRANTED){
             viewModel.checkPermission(requireActivity(),requireContext())
             } else{
@@ -92,17 +98,19 @@ class AddSaveFragment : Fragment(){
         adapter = RecyclerViewAdapter()
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
+
         getWords()
 
         adapter?.setOnClickDeleteItem {
         deleteSelectedWord(it.idModel)
         }
     }
-
+    //method of show data from database in recyclerview
     private fun getWords() {
         val klmList = sqliteHelper.getAllWord()
         adapter?.addItems(klmList)
     }
+    //delete selected word method
     private fun deleteSelectedWord(id : Int){
 
         val builder = AlertDialog.Builder(requireContext())
@@ -121,6 +129,7 @@ class AddSaveFragment : Fragment(){
         val alert = builder.create()
         alert.show()
     }
+    // method of listening to words
     private fun deleteAllWords(){
         val builder = AlertDialog.Builder(requireContext())
         builder.setMessage(R.string.alrt_sureDeleteAll)
@@ -128,8 +137,8 @@ class AddSaveFragment : Fragment(){
         builder.setTitle(R.string.alrt_warn)
         builder.setIcon(R.drawable.warning)
         builder.setPositiveButton(R.string.alrt_yes){ dialog, _->
-            idler = sqliteHelper.getOnlyID()
-            for (pos1 in idler) {
+            id = sqliteHelper.getOnlyID()
+            for (pos1 in id) {
                 sqliteHelper.deleteWordByID(pos1)
             }
             sharedPreferencesID.edit().putInt("idKontrol",0).apply()
@@ -142,6 +151,7 @@ class AddSaveFragment : Fragment(){
         val alert = builder.create()
         alert.show()
     }
+    //Add word database
     private fun addWord(){
         var word = binding.kaydedilecekText.text.toString().lowercase().trim().replace("\\s+".toRegex(), " ")
         val re = Regex("[^a-zA-Z0-9ığüşöçİĞÜŞÖÇ \\p{InArabic}]")
