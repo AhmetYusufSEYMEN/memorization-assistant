@@ -168,7 +168,7 @@ class AddSaveFragment : Fragment(){
                 alinanID += 1
                 sharedPreferencesID.edit().putInt("idKontrol",alinanID).apply()
             }
-            val klm = WordsModel(idModel = alinanID,kelimeModel = word)
+            val klm = WordsModel(idModel = alinanID,wordModel = word)
             val status = sqliteHelper.addWord(klm)
            //save check
             if(status > -1){

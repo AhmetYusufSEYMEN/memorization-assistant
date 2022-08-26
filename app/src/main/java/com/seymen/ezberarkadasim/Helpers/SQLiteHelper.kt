@@ -31,7 +31,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,n
         val db=this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(ID, klme.idModel)
-        contentValues.put(KELIMELER, klme.kelimeModel)
+        contentValues.put(KELIMELER, klme.wordModel)
 
         val success = db.insert(TBLKELIME, null, contentValues)
         db.close()
@@ -59,7 +59,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,n
             do {
                 id = cursor.getInt(idColumnIndex)
                 kelime = cursor.getString(kelimeColumnIndex)
-                val klm = WordsModel(idModel = id, kelimeModel = kelime)
+                val klm = WordsModel(idModel = id, wordModel = kelime)
                 klmList.add(klm)
             }
                 while (cursor.moveToNext())

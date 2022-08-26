@@ -23,7 +23,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
     class ViewHolder(itemview: View): RecyclerView.ViewHolder(itemview){
 
         fun bindview(klm : WordsModel){
-           itemView.textviewRecycler.text = klm.kelimeModel
+           itemView.textviewRecycler.text = klm.wordModel
         }
 
     }
