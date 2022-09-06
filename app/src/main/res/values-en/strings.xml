@@ -55,4 +55,5 @@
     <string name="alrt_ok">I understand</string>
     <string name="alrt_checklisten">If the listen button is not working. Make sure the speech services by Google is selected in your phone\'s Settings -> Language and Input -> Text-to-speech output. If you cannot see the Google speech service, you must search for \"Speech Services by Google\" from the Google Play Store and install it.</string>
     <string name="txt_memolang">Memorization Language:</string>
+    <string name="btn_suggestion">Suggestion/Complaint Form</string>
 </resources>

@@ -55,4 +55,5 @@
     <string name="alrt_ok">Ich verstehe</string>
     <string name="alrt_checklisten">Wenn die Hörtaste nicht funktioniert. Stellen Sie sicher, dass die Sprachdienste von Google in den Einstellungen Ihres Telefons -> Sprache und Eingabe -> Text-zu-Sprache-Ausgabe ausgewählt sind. Wenn Sie den Google-Sprachdienst nicht sehen können, müssen Sie im Google Play Store nach \"Speech Services by Google\" suchen und ihn installieren.</string>
     <string name="txt_memolang">Auswendiglernensprache:</string>
+    <string name="btn_suggestion">Vorschlags-/Beschwerdeformular</string>
 </resources>

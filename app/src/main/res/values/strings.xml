@@ -53,6 +53,7 @@
     <string name="alrt_ok">Anladım</string>
     <string name="alrt_checklisten">Eğer dinleme butonu çalışmıyorsa. Telefonunuzun Ayarlar -> Dil ve Giriş -> Metin-konuşma çıktısı kısmından Google konuşma servisinin seçili oluğundan emin olun. Eğer Google konuşma servisini göremiyorsanız Google Play Store\'dan \"Speech Services by Google\" şeklinde aratarak yüklemelisiniz.</string>
     <string name="txt_memolang">Ezber Dili</string>
+    <string name="btn_suggestion">Öneri/Şikayet Formu</string>
 
 
 </resources>

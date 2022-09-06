@@ -55,4 +55,5 @@
     <string name="alrt_ok">Capisco</string>
     <string name="alrt_checklisten">Se il pulsante di ascolto non funziona. Assicurati che i servizi vocali di Google siano selezionati nelle Impostazioni del telefono -> Lingua e immisione -> Output sintesi vocale. Si vous ne voyez pas le service vocal de Google, vous devez rechercher \"Speech Services by Google\" sur le Google Play Store et l\'installer.</string>
     <string name="txt_memolang">Linguaggio di Memorizzazione:</string>
+    <string name="btn_suggestion">Modulo per suggerimenti/reclami</string>
 </resources>

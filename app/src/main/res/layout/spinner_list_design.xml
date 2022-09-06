@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/style_spinner"
-    android:padding="4dp"
     android:fontFamily="@font/exo_medium"
-    android:textColor="@color/white"
+    android:padding="5dp"
     android:textAlignment="center"
-    android:textSize="18sp" />
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    />

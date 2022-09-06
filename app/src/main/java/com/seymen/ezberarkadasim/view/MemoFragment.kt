@@ -3,8 +3,10 @@ package com.seymen.ezberarkadasim.view
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
@@ -14,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -53,6 +56,11 @@ class MemoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        init()
+
+    }
+
+    private fun init() {
         //Defined variables are initialized
         viewModel = ViewModelProvider(this)[MemoViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
@@ -60,56 +68,76 @@ class MemoFragment : Fragment() {
         sqliteHelper = SQLiteHelper(requireContext())
 
         readList = sqliteHelper.getOnlyWord()
-        binding.textViewToplamKelime.text= readList.size.toString()
-        binding.textViewSayac.text= readList.size.toString()
 
-        MobileAds.initialize(requireContext())
-        mAdView = binding.adView
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        binding.apply {
+            textViewToplamKelime.text= readList.size.toString()
+            textViewSayac.text= readList.size.toString()
 
-        addInterstitialAd()
-        binding.ezbBaslaMCardView.setOnClickListener {
-            //check permission and action
-            if(ContextCompat.checkSelfPermission (requireContext(), Manifest.permission. RECORD_AUDIO ) != PackageManager. PERMISSION_GRANTED ){
-                checkPermission()
-            } else {
-                if(binding.textViewSayac.text.toString().toInt() > 0){
-                    getSpeechInput()
-                }
-                else{
-                    Toast.makeText(requireContext(),R.string.tst_thereIsNoMemoWord,Toast.LENGTH_LONG).show()
-                }
-            }
-        }
-        binding.geriBtnEzberle.setOnClickListener {
-            activity?.onBackPressed()
-        }
-        //Actions to be taken when clicking the reset button
-        binding.btnRepeat.setOnClickListener {
-            if(binding.textViewToplamKelime.text.toString().toInt() != binding.textViewSayac.text.toString().toInt()){
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage(R.string.alrt_repeatSure)
-                builder.setCancelable(true)
-                builder.setTitle(R.string.alrt_warn)
-                builder.setIcon(R.drawable.warning)
-                builder.setPositiveButton(R.string.alrt_yes){ dialog, _->
-                    binding.textViewSayac.text = readList.size.toString()
-                    dialog.dismiss()
-                    if (mInterstitialAd != null) {
-                        mInterstitialAd?.show(requireActivity())
-                        addInterstitialAd()
+            MobileAds.initialize(requireContext())
+            mAdView = adView
+            val adRequest = AdRequest.Builder().build()
+            mAdView.loadAd(adRequest)
+
+            addInterstitialAd()
+            ezbBaslaMCardView.setOnClickListener {
+                //check permission and action
+                if(ContextCompat.checkSelfPermission (requireContext(), Manifest.permission. RECORD_AUDIO ) != PackageManager. PERMISSION_GRANTED ){
+                    checkPermission()
+                } else {
+                    if(textViewSayac.text.toString().toInt() > 0){
+                        getSpeechInput()
+                    }
+                    else{
+                        Toast.makeText(requireContext(),R.string.tst_thereIsNoMemoWord,Toast.LENGTH_LONG).show()
                     }
                 }
-                builder.setNegativeButton(R.string.alrt_no){ dialog, _->
-                    dialog.dismiss()
-                }
-                val alert = builder.create()
-                alert.show()
-            }else{
-                Toast.makeText(requireContext(), R.string.tst_notRepeat, Toast.LENGTH_SHORT).show()
             }
+            geriBtnEzberle.setOnClickListener {
+                activity?.onBackPressed()
+            }
+            btnSuggestion.setOnClickListener {
+                openChromeTab(requireContext(),"https://docs.google.com/forms/d/e/1FAIpQLSfo0TyglibE_8t6ZVIF_ZF6L5eP2O3NcgrEpxv5YCjek5Yihg/viewform?usp=sf_link")
+            }
+            //Actions to be taken when clicking the reset button
+            btnRepeat.setOnClickListener {
+                if(textViewToplamKelime.text.toString().toInt() != textViewSayac.text.toString().toInt()){
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setMessage(R.string.alrt_repeatSure)
+                    builder.setCancelable(true)
+                    builder.setTitle(R.string.alrt_warn)
+                    builder.setIcon(R.drawable.warning)
+                    builder.setPositiveButton(R.string.alrt_yes){ dialog, _->
+                        textViewSayac.text = readList.size.toString()
+                        dialog.dismiss()
+                        if (mInterstitialAd != null) {
+                            mInterstitialAd?.show(requireActivity())
+                            addInterstitialAd()
+                        }
+                    }
+                    builder.setNegativeButton(R.string.alrt_no){ dialog, _->
+                        dialog.dismiss()
+                    }
+                    val alert = builder.create()
+                    alert.show()
+                }else{
+                    Toast.makeText(requireContext(), R.string.tst_notRepeat, Toast.LENGTH_SHORT).show()
+                }
+            }
+
         }
+    }
+    private fun openChromeTab(context: Context, urlD:String){
+        val builder = CustomTabsIntent.Builder()
+        builder.setStartAnimations(context, R.anim.slide_in, R.anim.slide_out);
+        builder.setExitAnimations(context, R.anim.fade_in, R.anim.fade_out);
+
+        builder.setToolbarColor(ContextCompat.getColor(context,R.color.primary))
+        builder.addDefaultShareMenuItem()
+        builder.setShowTitle(true)
+        builder.enableUrlBarHiding()
+
+        val customTabsIntent = builder.build()
+        customTabsIntent.launchUrl(context, Uri.parse(urlD))
     }
     //add advertisement method
     private fun addInterstitialAd(){

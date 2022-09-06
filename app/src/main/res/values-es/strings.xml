@@ -55,4 +55,5 @@
     <string name="alrt_ok">Entiendo</string>
     <string name="alrt_checklisten">Si el botón de escuchar no funciona. Asegúrese de que los servicios de voz de Google estén seleccionados en la Configuración de su teléfono -> Idioma y entradas -> Salida de texto a voz. Si no puede ver el servicio de voz de Google, debe buscar \"Speech Services by Google\" en Google Play Store e instalarlo.</string>
     <string name="txt_memolang">Lenguaje de Memorización:</string>
+    <string name="btn_suggestion">Formulario de Sugerencias/Reclamaciones</string>
 </resources>

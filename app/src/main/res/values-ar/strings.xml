@@ -55,4 +55,5 @@
     <string name="alrt_ok">أفهم</string>
     <string name="alrt_checklisten">إذا كان زر الاستماع لا يعمل. تأكد من تحديد خدمات الكلام من Google في إعدادات هاتفك -> اللغة والإدخال -> إخراج تحويل النص إلى كلام. إذا لم تتمكن من رؤية خدمة الكلام من Google ، فيجب عليك البحث عن \"خدمات الكلام من Google\" من متجر Google Play وتثبيتها.</string>
     <string name="txt_memolang">لغة الحفظ</string>
+    <string name="btn_suggestion">نموذج اقتراح / شكوى</string>
 </resources>

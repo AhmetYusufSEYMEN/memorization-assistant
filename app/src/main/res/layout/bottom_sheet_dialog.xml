@@ -6,6 +6,15 @@
     android:orientation="vertical"
     android:background="@drawable/dialog_bg"
     >
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="80dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/style_spinner"
+        />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,15 +40,15 @@
             android:orientation="horizontal"
             android:layout_gravity="center"
             >
-        <ImageView
-            android:id="@+id/btnInfo"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/exclamation"
-            android:layout_marginStart="30dp"
-            /></LinearLayout>
-
+            <ImageView
+                android:id="@+id/btnInfo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/exclamation"
+                android:layout_marginStart="30dp"
+                />
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -68,6 +77,7 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/durdurLayout"
         android:layout_width="match_parent"
@@ -91,4 +101,5 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"/>
     </LinearLayout>
+
 </LinearLayout>

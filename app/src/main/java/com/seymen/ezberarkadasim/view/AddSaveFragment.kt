@@ -59,6 +59,11 @@ class AddSaveFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        init()
+
+    }
+
+    private fun init() {
         //Defined variables are initialized
         viewModel = ViewModelProvider(this)[AddSaveViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
@@ -88,7 +93,7 @@ class AddSaveFragment : Fragment(){
         btnWriteWSpeech.setOnClickListener {
             //check permission
             if(ContextCompat. checkSelfPermission (requireContext(), Manifest.permission. RECORD_AUDIO ) != PackageManager. PERMISSION_GRANTED){
-            viewModel.checkPermission(requireActivity(),requireContext())
+                viewModel.checkPermission(requireActivity(),requireContext())
             } else{
                 getSpeechInput()
             }
@@ -102,9 +107,9 @@ class AddSaveFragment : Fragment(){
         getWords()
 
         adapter?.setOnClickDeleteItem {
-        deleteSelectedWord(it.idModel)
-        }
-    }
+            deleteSelectedWord(it.idModel)
+        }    }
+
     //method of show data from database in recyclerview
     private fun getWords() {
         val klmList = sqliteHelper.getAllWord()

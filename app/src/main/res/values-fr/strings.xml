@@ -55,4 +55,5 @@
     <string name="alrt_ok">Je comprends</string>
     <string name="alrt_checklisten">Si le bouton d\'écoute ne fonctionne pas. Assurez-vous que les services vocaux de Google sont sélectionnés dans les paramètres de votre téléphone -> Langue et saisie -> Sortie de synthèse vocale. Si vous ne voyez pas le service vocal de Google, vous devez rechercher \"Speech Services by Google\" sur le Google Play Store et l\'installer.</string>
     <string name="txt_memolang">Langue de Mémorisation:</string>
+    <string name="btn_suggestion">Formulaire de suggestion/plainte</string>
 </resources>
