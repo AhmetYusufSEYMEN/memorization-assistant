@@ -55,12 +55,6 @@ class MemoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        init()
-
-    }
-
-    private fun init() {
         //Defined variables are initialized
         viewModel = ViewModelProvider(this)[MemoViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
@@ -68,6 +62,11 @@ class MemoFragment : Fragment() {
         sqliteHelper = SQLiteHelper(requireContext())
 
         readList = sqliteHelper.getOnlyWord()
+        init()
+
+    }
+
+    private fun init() {
 
         binding.apply {
             textViewToplamKelime.text= readList.size.toString()

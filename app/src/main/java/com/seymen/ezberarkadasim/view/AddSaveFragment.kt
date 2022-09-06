@@ -58,12 +58,6 @@ class AddSaveFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        init()
-
-    }
-
-    private fun init() {
         //Defined variables are initialized
         viewModel = ViewModelProvider(this)[AddSaveViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
@@ -71,6 +65,12 @@ class AddSaveFragment : Fragment(){
         sqliteHelper = SQLiteHelper(requireContext())
 
         sharedPreferencesID = requireContext().getSharedPreferences("com.seymen.ezberarkadasim",MODE_PRIVATE)
+
+        init()
+
+    }
+
+    private fun init() {
 
         mAdView = binding.adView
         val adRequest = AdRequest.Builder().build()

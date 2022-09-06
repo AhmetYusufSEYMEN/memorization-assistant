@@ -51,13 +51,6 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
     @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        init()
-
-    }
-
-    private fun init() {
-
         //Defined variables are initialized
         viewModel = ViewModelProvider(this)[MenuViewModel::class.java]
         activity?.let { viewModel.checkNetAndClose(requireContext(), it) }
@@ -67,6 +60,11 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
         sqliteHelper = SQLiteHelper(requireContext())
 
         sharedPreferences = requireContext().getSharedPreferences("com.seymen.ezberarkadasim", Context.MODE_PRIVATE)
+        init()
+
+    }
+
+    private fun init() {
 
         binding.apply {
             mAdView = adView
