@@ -60,6 +60,7 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
         sqliteHelper = SQLiteHelper(requireContext())
 
         sharedPreferences = requireContext().getSharedPreferences("com.seymen.ezberarkadasim", Context.MODE_PRIVATE)
+
         init()
 
     }
@@ -67,16 +68,16 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
     private fun init() {
 
         binding.apply {
-            mAdView = adView
+            mAdView = binding.adView
             val adRequest = AdRequest.Builder().build()
             mAdView.loadAd(adRequest)
 
             //set last clicked spinner row
             val arrayAdapter = ArrayAdapter(requireContext(),R.layout.spinner_list_design,arrayLang)
-            spinnerLang.adapter = arrayAdapter
+            binding.spinnerLang.adapter = arrayAdapter
             val spinrow = sharedPreferences.getInt("spinnerrow",0)
-            spinnerLang.setSelection(spinrow)
-            spinnerLang.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
+            binding.spinnerLang.setSelection(spinrow)
+            binding.spinnerLang.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
 
                 //if spinner item is changed
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
@@ -91,19 +92,19 @@ class MenuFragment : Fragment(),TextToSpeech.OnInitListener{
                 override fun onNothingSelected(p0: AdapterView<*>?){}
             }
             val slide : Animation = AnimationUtils.loadAnimation(requireContext(), R.anim.cwanimation)
-            cwMenu.startAnimation(slide)
+            binding.cwMenu.startAnimation(slide)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-            ekleMCardView.setOnClickListener {
+            binding.ekleMCardView.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.action_menuFragment_to_ekleKaydetFragment,bundle)
             }
-            dinleMCardView.setOnClickListener {
+            binding.dinleMCardView.setOnClickListener {
                 showBottomSheetDialog()
             }
-            ezberleMCardView.setOnClickListener {
+            binding.ezberleMCardView.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.action_menuFragment_to_okutEzberleFragment,bundle)
-            } }
-
+            }
+        }
     }
 
     //method of show bottom sheet dialog

@@ -122,7 +122,6 @@ class MemoFragment : Fragment() {
                     Toast.makeText(requireContext(), R.string.tst_notRepeat, Toast.LENGTH_SHORT).show()
                 }
             }
-
         }
     }
     private fun openChromeTab(context: Context, urlD:String){
