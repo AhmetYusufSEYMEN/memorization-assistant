@@ -9,7 +9,7 @@ https://play.google.com/store/apps/details?id=com.seymen.ezberarkadasim
 
 ```
 MIT License
-Copyright (c) 2022 Harun Kör
+Copyright (c) 2022 Ahmet Yusuf Seymen
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
